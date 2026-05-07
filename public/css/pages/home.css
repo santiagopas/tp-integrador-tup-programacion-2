@@ -8,7 +8,7 @@
     padding: 5rem 2rem;
     gap: 4rem;
     min-height: 80vh;
-    background-image: url("../../../public/assets/img/bg-home.webp");
+    background-image: url("../../assets/img/bg-home.webp");
     background-size: cover;
     background-position: center;
 }
