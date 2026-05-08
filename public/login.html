@@ -1,91 +1,94 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hoja de personaje Dungeon & Dragon's</title>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="assets/img/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="assets/img/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="assets/img/favicon-16x16.png"
-        />
-        <link rel="manifest" href="site.webmanifest" />
-        <meta
-            name="description"
-            content="App para la Tecnicatura universitaria en programación - Asignatura: Programación 2. Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes"
-        />
-        <meta
-            name="keywords"
-            content="Dungeon & Dragons, hoja de personaje, RPG, rol"
-        />
-        <meta name="author" content="Renzo Larena y Santiago Pasciullo" />
 
-        <meta
-            property="og:title"
-            content="Hoja de personaje Dungeon & Dragon's"
-        />
-        <meta
-            property="og:description"
-            content="Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes"
-        />
-        <meta http-equiv="Content-Language" content="es" />
-        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-        <meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
-        <meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
-        <link rel="stylesheet" href="./css/pages/login.css" />
-        <script src="./js/index.js" defer></script>
-    </head>
-    <body>
-        <header class="site-header">
-            <nav class="navbar">
-                <a href="#">
-                    <figure class="navbar-brand">
-                        <img
-                            src="./assets/icons/d20-white.svg"
-                            alt="dragon rojo"
-                        />
-                    </figure>
-                </a>
-                <button
-                    class="navbar-toggler"
-                    aria-label="Abrir menú"
-                    id="menu-toggle"
-                >
-                    <img
-                        src="./assets/icons/d20-white.svg"
-                        alt="Abrir menú"
-                        width="30"
-                        height="30"
-                    />
-                </button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingreso / Registro</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="description"
+        content="App para la Tecnicatura universitaria en programación - Asignatura: Programación 2. Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+    <meta name="keywords" content="Dungeon & Dragons, hoja de personaje, RPG, rol" />
+    <meta name="author" content="Renzo Larena y Santiago Pasciullo" />
 
-                <ul class="navbar-nav" id="nav-menu">
-                    <li class="nav-item">
-                        <a href="./index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./registro.html" class="nav-link"
-                            >Registrarse</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Iniciar sesión</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main></main>
-    </body>
+    <meta property="og:title" content="Hoja de personaje Dungeon & Dragon's" />
+    <meta property="og:description"
+        content="Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+    <meta http-equiv="Content-Language" content="es" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
+    <meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
+    <link rel="stylesheet" href="./css/pages/login.css" />
+    <script src="./js/index.js" defer></script>
+    <script src="./js/auth/auth.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="#">
+                <figure class="navbar-brand">
+                    <img src="./assets/icons/d20-white.svg" alt="dragon rojo" />
+                </figure>
+            </a>
+            <button class="navbar-toggler" aria-label="Abrir menú" id="menu-toggle">
+                <img src="./assets/icons/d20-white.svg" alt="Abrir menú" width="30" height="30" />
+            </button>
+
+            <ul class="navbar-nav" id="nav-menu">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">Inicio</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="links">
+            <a href="#" onclick="pagIngresar()">Ingresar</a> <a href="#" onclick="pagRegistrar()">Registrarse</a>
+        </div>
+        
+        <section id="formularioIngreso">
+            <div id="Ingreso">
+                <div>
+                    <h4>Ingrese su correo electrónico:</h4>
+                    <input type="text"></input>
+                    <h4>Ingrese su contraseña:</h4>
+                    <input type="password"></input>
+                    <div id="errorDatosIngreso">Aca va el mensaje de error</div>
+                </div>
+                <div id="confirmarIngreso">
+                    <button id="botonIngreso">Acceder</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="formularioRegistro" class="hide">
+            <div id="Registro">
+                <div>
+                    <h4>Ingrese su nombre:</h4>
+                    <input type="text"></input>
+                    <h4>Ingrese su correo electrónico:</h4>
+                    <input type="text"></input>
+                    <h4>Ingrese su fecha de nacimiento:</h4>
+                    <input type="text"></input>
+                    <h4>Ingrese su contraseña:</h4>
+                    <input type="password"></input>
+                    <h4>Ingrese nuevamente su contraseña:</h4>
+                    <input type="password"></input>
+                    <div id="errorDatosRegistro">Aca va el mensaje de error</div>
+                    <div id="confirmarRegistro">
+                        <button id="botonRegistro">Registrarse</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
 </html>
