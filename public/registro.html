@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoja de personaje Dungeon & Dragon's</title>
+    <title>Registro</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
@@ -23,6 +23,7 @@
     <meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
     <link rel="stylesheet" href="./css/pages/registro.css" />
     <script src="./js/index.js" defer></script>
+    <script src="./js/auth/auth.js" defer></script>
 </head>
 
 <body>
@@ -41,16 +42,44 @@
                 <li class="nav-item">
                     <a href="./index.html" class="nav-link">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Registrarse</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./login.html" class="nav-link">Iniciar sesión</a>
-                </li>
             </ul>
         </nav>
     </header>
-    <main></main>
+    <main class="cuerpo">
+
+        <section class="title">
+            <h1>Comienza la aventura!</h1>
+        </section>
+
+        <section id="formularioRegistro">
+            <div id="Registro">
+                <div>
+                    <label>Ingrese su nombre:</label>
+                    <input id="nombre" type="text"></input>
+                    <label>Ingrese su correo electrónico:</label>
+                    <input id="correo" type="text"></input>
+                    <label>Ingrese su fecha de nacimiento:</label>
+                    <input id="nacimiento" type="date"></input>
+                    <label>Ingrese su contraseña:</label>
+                    <input id="contra" type="password"></input>
+                    <label>Ingrese nuevamente su contraseña:</label>
+                    <input id="contraPrueba" type="password"></input>
+                    <div id="confirmarRegistro">
+                        <button id="botonRegistro">Registrarse</button>
+                    </div>
+                    <div id="errorDatosRegistro"></div>
+                    <div id="registrado"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="enunciados">
+            <div id="texts">
+                <h3>Ya tenes cuenta? <a style="text-decoration: underline;" href="./login.html">Ingresa acá</a></h3>
+        </section>
+
+
+    </main>
 
     <footer class="site-footer">
         <p class="footer-text">

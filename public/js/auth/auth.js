@@ -1,22 +1,3 @@
-//Cambio de campos ingreso y registro
-
-const ingreso = document.getElementById("formularioIngreso");
-const registro = document.getElementById("formularioRegistro");
-
-function pagIngresar() {
-    ingreso.classList.remove("formularioInvisible");
-    ingreso.classList.add("formularioVisible");
-    registro.classList.remove("formularioVisible");
-    registro.classList.add("formularioInvisible");
-}
-
-function pagRegistrar() {
-    ingreso.classList.add("formularioInvisible");
-    ingreso.classList.remove("formularioVisible");
-    registro.classList.add("formularioVisible");
-    registro.classList.remove("formularioInvisible");
-}
-
 //validación de formularios y localStorage
 
 const alertError = document.getElementById("errorDatosRegistro");
@@ -53,7 +34,7 @@ registrar.addEventListener("click", () => {
     };
 
     for (const i in usuario) {
-        if (!usuario[i]){
+        if (!usuario[i]) {
             return renderError("Asegúrese de llenar todos los campos");
         }
     }
@@ -73,11 +54,15 @@ registrar.addEventListener("click", () => {
     validar = true;
 
     if (validar) {
-        document.getElementById("registrado").textContent ="Registrado exitosamente! Redireccionando al ingreso...";        
         localStorage.setItem("usuario", JSON.stringify(usuario));
-        setInterval
+        document.getElementById("registrado").textContent = "Registrado exitosamente! Redireccionando al ingreso...";
+        setTimeout(() => {
+            window.location.href = "./login.html";
+        }, 3000);
     }
 });
 
 //validación ingreso
+
+
 
