@@ -47,47 +47,58 @@
     </header>
     <main>
 
+        <section class="title">
+            <h1>Comienza la aventura!</h1>
+        </section>
+
         <div class="links">
             <a href="#" onclick="pagIngresar()">Ingresar</a> <a href="#" onclick="pagRegistrar()">Registrarse</a>
         </div>
-        
+
         <section id="formularioIngreso">
             <div id="Ingreso">
                 <div>
                     <h4>Ingrese su correo electrónico:</h4>
-                    <input type="text"></input>
+                    <input id="correoLogin" type="text"></input>
                     <h4>Ingrese su contraseña:</h4>
-                    <input type="password"></input>
-                    <div id="errorDatosIngreso">Aca va el mensaje de error</div>
+                    <input id="contraLogin" type="password"></input>
                 </div>
                 <div id="confirmarIngreso">
                     <button id="botonIngreso">Acceder</button>
                 </div>
+                <div id="errorDatosIngreso">Aca va el mensaje de error</div>
             </div>
         </section>
 
-        <section id="formularioRegistro" class="hide">
+        <section id="formularioRegistro" class="formularioInvisible">
             <div id="Registro">
                 <div>
                     <h4>Ingrese su nombre:</h4>
-                    <input type="text"></input>
+                    <input id="nombre" type="text"></input>
                     <h4>Ingrese su correo electrónico:</h4>
-                    <input type="text"></input>
+                    <input id="correo" type="text"></input>
                     <h4>Ingrese su fecha de nacimiento:</h4>
-                    <input type="text"></input>
+                    <input id="nacimiento" type="text"></input>
                     <h4>Ingrese su contraseña:</h4>
-                    <input type="password"></input>
+                    <input id="contra" type="password"></input>
                     <h4>Ingrese nuevamente su contraseña:</h4>
-                    <input type="password"></input>
-                    <div id="errorDatosRegistro">Aca va el mensaje de error</div>
+                    <input id="contraPrueba" type="password"></input>
                     <div id="confirmarRegistro">
                         <button id="botonRegistro">Registrarse</button>
                     </div>
-
+                    <div id="errorDatosRegistro">Aca va el mensaje de error</div>
                 </div>
             </div>
-
         </section>
+
+        <section class="enunciados">
+            <div id="texts">
+                <h3>Ingresa con tu cuenta!</h3>
+                <h3>Aún no tienes cuenta? Registrate gratis!</h3>
+            </div>
+        </section>
+
+
     </main>
 </body>
 

@@ -7,22 +7,60 @@ main {
     align-items: center;
 }
 
-.links{
+.links {
     display: flex;
     justify-content: center;
+    border: 5px;
     margin-top: 20px;
+    margin-bottom: 10px;
     gap: 50px;
     cursor: pointer;
+    color: burlywood;
+
 }
 
-section{
+input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section {
     border: px;
     padding: 0px;
     width: 400px;
     text-align: center;
 }
 
-.hide {
-    display: none;
+.formularioInvisible {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
 }
 
+.formularioVisible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.5s ease;
+    pointer-events: auto;
+    position: relative;
+}
+
+#errorDatosRegistro,
+#errorDatosIngreso {
+    color: red;
+    font-size: 18px;
+}
+
+.title {
+    width: 800px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: gold;
+    font-size: 100%;
+
+}
