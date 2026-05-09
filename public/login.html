@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingreso / Registro</title>
+    <title>Ingreso</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
@@ -45,7 +45,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="cuerpo">
 
         <section class="title">
             <h1>Comienza la aventura!</h1>
@@ -58,9 +58,9 @@
         <section id="formularioIngreso">
             <div id="Ingreso">
                 <div>
-                    <h4>Ingrese su correo electrónico:</h4>
+                    <label>Ingrese su correo electrónico:</label>
                     <input id="correoLogin" type="text"></input>
-                    <h4>Ingrese su contraseña:</h4>
+                    <label>Ingrese su contraseña:</label>
                     <input id="contraLogin" type="password"></input>
                 </div>
                 <div id="confirmarIngreso">
@@ -73,20 +73,21 @@
         <section id="formularioRegistro" class="formularioInvisible">
             <div id="Registro">
                 <div>
-                    <h4>Ingrese su nombre:</h4>
+                    <label>Ingrese su nombre:</label>
                     <input id="nombre" type="text"></input>
-                    <h4>Ingrese su correo electrónico:</h4>
+                    <label>Ingrese su correo electrónico:</label>
                     <input id="correo" type="text"></input>
-                    <h4>Ingrese su fecha de nacimiento:</h4>
-                    <input id="nacimiento" type="text"></input>
-                    <h4>Ingrese su contraseña:</h4>
+                    <label>Ingrese su fecha de nacimiento:</label>
+                    <input id="nacimiento" type="date"></input>
+                    <label>Ingrese su contraseña:</label>
                     <input id="contra" type="password"></input>
-                    <h4>Ingrese nuevamente su contraseña:</h4>
+                    <label>Ingrese nuevamente su contraseña:</label>
                     <input id="contraPrueba" type="password"></input>
                     <div id="confirmarRegistro">
                         <button id="botonRegistro">Registrarse</button>
                     </div>
                     <div id="errorDatosRegistro">Aca va el mensaje de error</div>
+                    <div id="registrado">Exitoo</div>
                 </div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 @import url(../base.css);
 
-main {
+.cuerpo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,11 +56,19 @@ section {
     font-size: 18px;
 }
 
+#registrado {
+    color: green;
+    font-size: 20px;
+}
 .title {
     width: 800px;
     margin-top: 30px;
     margin-bottom: 40px;
     color: gold;
     font-size: 100%;
+}
+
+label {
+    font-style: italic;
 
 }
