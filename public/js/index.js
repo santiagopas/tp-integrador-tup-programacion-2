@@ -3,6 +3,7 @@ const navMenu = document.querySelector('#nav-menu');
 const themeToggle = document.querySelector('#theme-toggle');
 const themeIcon = document.querySelector('#theme-toggle img');
 const menuIcon = menuToggle?.querySelector('img');
+const brandIcon = document.querySelector('.navbar-brand img');
 const themeStorageKey = 'theme';
 
 const updateMenuToggleState = () => {
@@ -11,9 +12,17 @@ const updateMenuToggleState = () => {
 	}
 
 	const isMenuOpen = navMenu.classList.contains('active');
-	menuIcon.src = isMenuOpen
-		? './assets/icons/d10-white.svg'
-		: './assets/icons/d20-white.svg';
+	const isLightTheme = document.body.classList.contains('light-theme');
+
+	if (isMenuOpen) {
+		menuIcon.src = isLightTheme
+			? './assets/icons/d10-dark.svg'
+			: './assets/icons/d10-white.svg';
+	} else {
+		menuIcon.src = isLightTheme
+			? './assets/icons/d20-dark.svg'
+			: './assets/icons/d20-white.svg';
+	}
 	menuIcon.alt = isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
 	menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
 };
@@ -35,6 +44,19 @@ const updateThemeToggleState = () => {
 		isLightTheme ? 'Cambiar tema a oscuro' : 'Cambiar tema a claro',
 	);
 	themeToggle.setAttribute('aria-pressed', String(isLightTheme));
+
+	// actualizar iconos dependientes del tema
+	updateBrandIconState();
+	updateMenuToggleState();
+};
+
+const updateBrandIconState = () => {
+	if (!brandIcon) return;
+	const isLightTheme = document.body.classList.contains('light-theme');
+	brandIcon.src = isLightTheme
+		? './assets/icons/d20-dark.svg'
+		: './assets/icons/d20-white.svg';
+	brandIcon.alt = 'D20';
 };
 
 const applyStoredTheme = () => {
