@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hoja de personaje Dungeon & Dragon's</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+	<link rel="manifest" href="site.webmanifest" />
+	<meta name="description"
+		content="App para la Tecnicatura universitaria en programación - Asignatura: Programación 2. Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+	<meta name="keywords" content="Dungeon & Dragons, hoja de personaje, RPG, rol" />
+	<meta name="author" content="Renzo Larena y Santiago Pasciullo" />
+
+	<meta property="og:title" content="Hoja de personaje Dungeon & Dragon's" />
+	<meta property="og:description"
+		content="Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+	<meta http-equiv="Content-Language" content="es" />
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+	<meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
+	<meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
+	<link rel="stylesheet" href="./css/pages/crear-personaje-form.css" />
+	<script src="./js/index.js" defer></script>
+	<script type="module" src="./js/personaje/crearPersonaje.js" defer></script>
+
+</head>
+
+<body>
+	<header class="site-header">
+		<nav class="navbar">
+			<a href="#">
+				<figure class="navbar-brand">
+					<img src="./assets/icons/d20-white.svg" alt="d20 icono" />
+				</figure>
+			</a>
+			<button class="navbar-toggler" aria-label="Abrir menú" id="menu-toggle">
+				<img src="./assets/icons/d20-white.svg" alt="Abrir menú" width="30" height="30" />
+			</button>
+
+			<ul class="navbar-nav" id="nav-menu">
+				<li class="nav-item">
+					<a href="#" class="nav-link">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a href="./registro.html" class="nav-link">Registrarse</a>
+				</li>
+				<li class="nav-item">
+					<a href="./login.html" class="nav-link">Iniciar sesión</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="form-section">
+			<h1>Crear nuevo personaje</h1>
+			<form action="" method="post" class="character-form" autocomplete="on">
+				<p id="form-hint">
+					Crea tu personaje.
+				</p>
+
+				<fieldset>
+					<legend>Datos del personaje</legend>
+					<div class="form-field">
+						<label for="character-name">Nombre del personaje</label>
+						<input type="text" id="character-name" name="characterName" required maxlength="50"
+							autocomplete="nickname" placeholder="Ej: Trancos Strider" />
+					</div>
+
+					<div class="form-field">
+						<label for="race">Raza</label>
+						<select id="race" name="race" required>
+							<option value="" selected disabled>Elegi una raza</option>
+							<option value="elfo">Elfo</option>
+							<option value="enano">Enano</option>
+							<option value="humano">Humano</option>
+							<option value="tiefling">Tiefling</option>
+						</select>
+					</div>
+
+					<div class="form-field">
+						<label for="class">Clase</label>
+						<select id="class" name="class" required aria-describedby="class-help">
+							<option value="" selected disabled>Elegi una clase</option>
+							<option value="hechicero" data-base-hp="6" data-armor="Ligera">
+								Hechicero (HP base 6, armadura ligera)
+							</option>
+							<option value="paladin" data-base-hp="10" data-armor="Pesada">
+								Paladin (HP base 10, armadura pesada)
+							</option>
+							<option value="barbaro" data-base-hp="12" data-armor="Media">
+								Barbaro (HP base 12, armadura media)
+							</option>
+							<option value="clerigo" data-base-hp="8" data-armor="Media">
+								Clerigo (HP base 8, armadura media)
+							</option>
+						</select>
+						<p id="class-help">
+							La clase define el HP base y el tipo de armadura.
+						</p>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Nivel y progresion</legend>
+					<div class="form-field">
+						<label for="class-level">Nivel de clase</label>
+						<select id="class-level" name="classLevel" required>
+							<option value="" selected disabled>Elegi un nivel</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+						</select>
+					</div>
+
+					<div class="form-field">
+						<label for="class-abilities">Habilidades de clase</label>
+						<textarea id="class-abilities" name="classAbilities" rows="4" readonly
+							placeholder="Se completa segun clase y nivel"></textarea>
+					</div>
+
+					<div class="form-field">
+						<label for="final-hp">HP final</label>
+						<output id="final-hp" name="finalHp">0</output>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Caracteristicas</legend>
+					<div class="stats-grid" role="group" aria-label="Caracteristicas base">
+						<div class="form-field">
+							<label for="strength">Fuerza</label>
+							<input type="number" id="strength" name="strength" min="1" max="20" required />
+						</div>
+						<div class="form-field">
+							<label for="dexterity">Destreza</label>
+							<input type="number" id="dexterity" name="dexterity" min="1" max="20" required />
+						</div>
+						<div class="form-field">
+							<label for="constitution">Constitucion</label>
+							<input type="number" id="constitution" name="constitution" min="1" max="20" required />
+						</div>
+						<div class="form-field">
+							<label for="intelligence">Inteligencia</label>
+							<input type="number" id="intelligence" name="intelligence" min="1" max="20" required />
+						</div>
+						<div class="form-field">
+							<label for="wisdom">Sabiduria</label>
+							<input type="number" id="wisdom" name="wisdom" min="1" max="20" required />
+						</div>
+						<div class="form-field">
+							<label for="charisma">Carisma</label>
+							<input type="number" id="charisma" name="charisma" min="1" max="20" required />
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Seleccion de habilidades</legend>
+					<p id="skills-hint">Elegi 4 habilidades.</p>
+					<div class="skills-grid" role="group" aria-describedby="skills-hint">
+						<label>
+							<input type="checkbox" name="skills" value="acrobacias" />
+							Acrobacias
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="arcanos" />
+							Arcanos
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="atletismo" />
+							Atletismo
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="historia" />
+							Historia
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="intimidacion" />
+							Intimidacion
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="investigacion" />
+							Investigacion
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="medicina" />
+							Medicina
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="percepcion" />
+							Percepcion
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="persuasion" />
+							Persuasion
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="sigilo" />
+							Sigilo
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="supervivencia" />
+							Supervivencia
+						</label>
+						<label>
+							<input type="checkbox" name="skills" value="trato-animales" />
+							Trato con animales
+						</label>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Conjuros (opcional)</legend>
+					<p id="spells-hint">
+						Disponible para clases que usan magia.
+					</p>
+					<div class="form-field">
+						<label for="spells">Seleccion de conjuros</label>
+						<select id="spells" name="spells" multiple aria-describedby="spells-hint">
+							<option value="bola-fuego">Bola de fuego</option>
+							<option value="curar-heridas">Curar heridas</option>
+							<option value="escudo">Escudo</option>
+							<option value="hechizar">Hechizar persona</option>
+							<option value="rayo-helado">Rayo de escarcha</option>
+							<option value="salto">Salto</option>
+						</select>
+					</div>
+				</fieldset>
+
+				<div class="form-actions">
+					<button class="btnCrear" type="submit">Crear personaje</button>
+					<button class="btnLimpiar" type="reset">Limpiar formulario</button>
+				</div>
+			</form>
+		</section>
+	</main>
+	<footer class="site-footer">
+		<p class="footer-text">
+			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena y
+			Santiago Pasciullo
+		</p>
+	</footer>
+</body>
+
+</html>
