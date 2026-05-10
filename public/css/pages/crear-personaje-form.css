@@ -4,8 +4,9 @@
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: var(--color-secondary);
+	background-color: var(--bg-card);
 	border-radius: 8px;
+	border: 1px solid var(--border-color);
 }
 
 .form-field {
@@ -22,8 +23,10 @@
 .form-field select {
 	width: 100%;
 	padding: 8px;
-	border: 1px solid var(--color-primary);
+	border: 1px solid var(--border-color);
 	border-radius: 4px;
+	background-color: var(--bg-dark);
+	color: var(--text-main);
 }
 
 .form-actions {
@@ -72,9 +75,9 @@ form>fieldset:nth-child(3)>div:nth-child(4)>label {
 }
 
 .btnCrear {
-	background-color: var(--color-primary);
-	color: var(--accent-gold);
-	border: 1px solid var(--accent-gold);
+	background-color: var(--primary-red);
+	color: #fff;
+	border: 1px solid var(--primary-red);
 }
 
 .btnLimpiar {
