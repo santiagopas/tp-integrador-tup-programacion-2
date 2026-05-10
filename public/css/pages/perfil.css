@@ -109,3 +109,10 @@ main {
     padding: 0;
     width: 100%;
 }
+
+footer {
+	margin-top: 20rem;
+	text-align: bottom;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
