@@ -1,1 +1,78 @@
 @import url(../base.css);
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #201f1e;
+    padding: 30px;
+    border-radius: 6px;
+    background-color: #201f1e;
+    width: 100%;
+    font-size: 18px;
+}
+
+.atributoUsuario {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background-color: #363533;
+    border: 1px solid #363533;
+    border-radius: 4px;
+}
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+#crearPersonaje{
+    margin-right: 20px;
+}
+
+button{
+    color: white;
+    background-color: #0f2746;
+}
+
+.personaje {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #3e4340;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #3e4340;
+    width: 100%;
+}
+
+.atributo {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background-color: #3e4340;
+    border: 1px solid #3e4340;
+    border-radius: 4px;
+}
+
+
+.acciones {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#listadoPersonajes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
