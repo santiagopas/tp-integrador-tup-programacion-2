@@ -10,7 +10,8 @@ main {
 .usuario {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     border: 1px solid #201f1e;
     padding: 30px;
     border-radius: 6px;
@@ -26,19 +27,22 @@ main {
     background-color: #363533;
     border: 1px solid #363533;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo {
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
 }
-#crearPersonaje{
+
+#crearPersonaje {
     margin-right: 20px;
 }
 
 .botonMod {
-    width: 1000%;
+    width: auto;
     padding: 10px;
     background: var(--primary-red);
     color: white;
@@ -46,11 +50,10 @@ main {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 15px var(--primary-red-hover);
 }
+
 .botonCrearPers {
     width: 20%;
     padding: 5px;
@@ -60,11 +63,12 @@ main {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-        transition:
+    transition:
         background-color 0.3s ease,
         transform 0.2s ease;
     box-shadow: 0 4px 15px var(--primary-red-hover)
 }
+
 .personaje {
     display: flex;
     justify-content: space-between;
@@ -81,7 +85,7 @@ main {
 .nomPer,
 .claPer,
 .nivPer,
-.fecPer{
+.fecPer {
     flex: 1;
     margin-right: 1rem;
     padding: 0.5rem;
@@ -94,7 +98,9 @@ main {
 .acciones {
     display: flex;
     gap: 0.5rem;
-    
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
 }
 
 #listadoPersonajes {
