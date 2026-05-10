@@ -136,6 +136,7 @@ const activarEdicion = () => {
     botonGuardar.classList.add("botonMod");
     botonGuardar.addEventListener("click", () => {
         const nuevoUsuario = {
+            ...JSON.parse(localStorage.getItem("usuario")),
             nombre: document.getElementById("editNombre").value,
             correo: document.getElementById("editCorreo").value,
             nacimiento: document.getElementById("editNacimiento").value
