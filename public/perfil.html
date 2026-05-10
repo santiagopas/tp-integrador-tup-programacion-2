@@ -23,6 +23,7 @@
     <meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
     <link rel="stylesheet" href="./css/pages/perfil.css" />
     <script src="./js/index.js" defer></script>
+    <script type="module" src="./js/perfil.js" defer></script>
 </head>
 
 <body>
@@ -36,9 +37,7 @@
             </a>
             <button class="navbar-toggler" aria-label="Abrir menú" id="menu-toggle">
                 <img src="./assets/icons/d20-white.svg" alt="Abrir menú" width="30" height="30" />
-                <figure>
-                    <img src="./assets/img/red-dragon.webp" alt="dragon rojo" />
-                </figure>
+
 
             </button>
 
@@ -49,6 +48,11 @@
                 <li class="nav-item">
                     <a href="./index.html" class="nav-link">Cerrar Sesión</a>
                 </li>
+                				<li class="nav-item">
+					<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+						<img src="./assets/icons/sun.svg" alt="Cambiar tema" width="25" height="25" />
+					</button>
+				</li>
                 </li>
             </ul>
         </nav>
@@ -60,19 +64,19 @@
                 <div class="usuario">
                     <div class="atributoUsuario">
                         <div class="titulo">Nombre:</div>
-                        <div class="valor">nombre usuario</div>
+                        <div id="nomUsuario">nombre usuario</div>
                     </div>
                     <div class="atributoUsuario">
                         <div class="titulo">Correo:</div>
-                        <div class="valor">correo usuario</div>
+                        <div id="corUsuario">correo usuario</div>
                     </div>
                     <div class="atributoUsuario">
                         <div class="titulo">Nacimiento:</div>
-                        <div class="valor">nacimiento usuario</div>
+                        <div id="nacUsuario">nacimiento usuario</div>
                     </div>
                     <div class="atributoUsuario">
                         <div class="titulo">Edad:</div>
-                        <div class="valor">edad usuario</div>
+                        <div id="edaUsuario">edad usuario</div>
                     </div>
                     <div class="acciones">
                         <button class="botonMod">⚙️</button>
@@ -84,31 +88,23 @@
 
         <section id="personajesUsuario">
             <div class="titulo"><strong><h1>Personajes Creados</h1></strong> <button class="botonCrearPers" id="crearPersonaje" onclick="location.href='./crear-personaje-form.html'" >Crear Personaje</button></div>
-            <ul id="listadoPersonajes">
-                <li class="personaje">
-                    <div class="nomPer"><strong>Nombre:</strong> nombre personaje</div>
-                    <div class="claPer"><strong>Clase:</strong> clase personaje</div>
-                    <div class="nivPer"><strong>Nivel:</strong> nivel personaje</div>
-                    <div class="fecPer"><strong>Fecha:</strong> fecha creación personaje</div>
-                    <div class="acciones">
-                        <button class="botonMod">✏️</button>
-                        <button class="botonMod">❌</button>
-                    </div>
-                </li>
-                <li class="personaje">
-                    <div class="nomPer"><strong>Nombre:</strong> nombre personaje</div>
-                    <div class="claPer"><strong>Clase:</strong> clase personaje</div>
-                    <div class="nivPer"><strong>Nivel:</strong> nivel personaje</div>
-                    <div class="fecPer"><strong>Fecha:</strong> fecha creación personaje</div>
-                    <div class="acciones">
-                        <button class="botonMod">✏️</button>
-                        <button class="botonMod">❌</button>
-                    </div>
-                </li>
-            </ul>
+
+            <ul id="listadoPersonajes"></ul>
 
         </section>
     </main>
 </body>
 
 </html>
+
+
+<!--
+                     <div class="nomPer"><strong>Nombre:</strong> nombre personaje</div>
+                    <div class="claPer"><strong>Clase:</strong> clase personaje</div>
+                    <div class="nivPer"><strong>Nivel:</strong> nivel personaje</div>
+                    <div class="fecPer"><strong>Fecha:</strong> fecha creación personaje</div>
+                    <div class="acciones">
+                        <button class="botonMod">📝</button>
+                        <button class="botonMod">❌</button>
+                    </div>
+-->

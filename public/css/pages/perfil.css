@@ -40,7 +40,7 @@ main {
 .botonMod {
     width: 1000%;
     padding: 10px;
-    background: #0e315f;
+    background: var(--primary-red);
     color: white;
     border: none;
     border-radius: 4px;
@@ -49,12 +49,12 @@ main {
     transition:
         background-color 0.3s ease,
         transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(37, 82, 173, 0.592);
+    box-shadow: 0 4px 15px var(--primary-red-hover);
 }
 .botonCrearPers {
     width: 20%;
     padding: 5px;
-    background: #2b460f;
+    background: var(--primary-red);
     color: white;
     border: none;
     border-radius: 4px;
@@ -63,7 +63,7 @@ main {
         transition:
         background-color 0.3s ease,
         transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(74, 213, 53, 0.356)
+    box-shadow: 0 4px 15px var(--primary-red-hover)
 }
 .personaje {
     display: flex;
