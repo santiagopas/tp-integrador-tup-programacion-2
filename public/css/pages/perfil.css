@@ -37,11 +37,34 @@ main {
     margin-right: 20px;
 }
 
-button{
+.botonMod {
+    width: 1000%;
+    padding: 10px;
+    background: #0e315f;
     color: white;
-    background-color: #0f2746;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(37, 82, 173, 0.592);
 }
-
+.botonCrearPers {
+    width: 20%;
+    padding: 5px;
+    background: #2b460f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+        transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(74, 213, 53, 0.356)
+}
 .personaje {
     display: flex;
     justify-content: space-between;
@@ -55,7 +78,10 @@ button{
     width: 100%;
 }
 
-.atributo {
+.nomPer,
+.claPer,
+.nivPer,
+.fecPer{
     flex: 1;
     margin-right: 1rem;
     padding: 0.5rem;
@@ -68,6 +94,7 @@ button{
 .acciones {
     display: flex;
     gap: 0.5rem;
+    
 }
 
 #listadoPersonajes {
