@@ -23,6 +23,7 @@
 	<meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
 	<link rel="stylesheet" href="./css/pages/personaje-hoja.css" />
 	<script src="./js/index.js" defer></script>
+	<script type="module" src="./js/personaje/personajeHoja.js" defer></script>
 </head>
 
 <body>
@@ -55,7 +56,18 @@
 			</ul>
 		</nav>
 	</header>
-	<main></main>
+	<main>
+		<section class="character-sheet-section">
+			<div id="character-sheet" class="character-sheet" aria-live="polite"></div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p class="footer-text">
+			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena y
+			Santiago Pasciullo
+		</p>
+	</footer>
 </body>
 
 </html>
