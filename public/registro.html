@@ -22,7 +22,7 @@
 	<meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
 	<meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
 	<link rel="stylesheet" href="./css/pages/registro.css" />
-	<script src="./js/index.js" defer></script>
+	<script type="module" src="./js/index.js" defer></script>
 	<script src="./js/auth/reg.js" defer></script>
 </head>
 
@@ -64,23 +64,23 @@
 
 		<section id="formularioRegistro">
 			<div id="Registro">
-				<div>
-					<label>Ingrese su nombre:</label>
-					<input id="nombre" type="text"></input>
-					<label>Ingrese su correo electrónico:</label>
-					<input id="correo" type="text"></input>
-					<label>Ingrese su fecha de nacimiento:</label>
-					<input id="nacimiento" type="date"></input>
-					<label>Ingrese su contraseña:</label>
-					<input id="contra" type="password"></input>
-					<label>Ingrese nuevamente su contraseña:</label>
-					<input id="contraPrueba" type="password"></input>
+				<form id="formRegistro">
+					<label for="nombre">Ingrese su nombre:</label>
+					<input id="nombre" type="text" required autocomplete="name">
+					<label for="correo">Ingrese su correo electrónico:</label>
+					<input id="correo" type="email" required autocomplete="email">
+					<label for="nacimiento">Ingrese su fecha de nacimiento:</label>
+					<input id="nacimiento" type="date" required autocomplete="bday">
+					<label for="contra">Ingrese su contraseña:</label>
+					<input id="contra" type="password" required autocomplete="new-password">
+					<label for="contraPrueba">Ingrese nuevamente su contraseña:</label>
+					<input id="contraPrueba" type="password" required autocomplete="new-password">
 					<div id="confirmarRegistro">
-						<button id="botonRegistro">Registrarse</button>
+						<button type="submit" id="botonRegistro">Registrarse</button>
 					</div>
 					<div id="errorDatosRegistro"></div>
 					<div id="registrado"></div>
-				</div>
+				</form>
 			</div>
 		</section>
 
@@ -94,8 +94,7 @@
 
 	<footer class="site-footer">
 		<p class="footer-text">
-			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena Spiatta y
-			Santiago Pasciullo
+			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena Spiatta y Santiago Pasciullo
 		</p>
 	</footer>
 </body>

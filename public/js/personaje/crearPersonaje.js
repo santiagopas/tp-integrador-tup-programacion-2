@@ -220,6 +220,7 @@ if (characterForm) {
 			armor,
 			baseHp,
 			finalHp,
+			currentHp: finalHp,
 			classAbilities: classAbilitiesList,
 			stats: {
 				strength: toNumber(strengthInput ? strengthInput.value : 0),

@@ -1,5 +1,6 @@
 //validación ingreso
 
+const formIngreso = document.getElementById("formularioIngreso");
 const alertError = document.getElementById("errorDatosIngreso");
 const ingresar = document.getElementById("botonIngreso");
 
@@ -10,29 +11,27 @@ const renderError = (text) => {
     }, 3000);
 };
 
-ingresar.addEventListener("click", () => {
 
-    const usuarioStorage = JSON.parse(localStorage.getItem("usuario"));
+formIngreso.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const usuariosStorage = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const correoLogin = document.getElementById("correoLogin").value;
     const contraLogin = document.getElementById("contraLogin").value;
 
-    const correoUsuario = usuarioStorage.correo;
-    const contraUsuario = usuarioStorage.contra;
+    const usuarioEncontrado = usuariosStorage.find(u => u.correo === correoLogin && u.contra === contraLogin);
 
-    if(correoLogin !== correoUsuario) {
+    if (!usuarioEncontrado) {
         document.getElementById("contraLogin").value = "";
-        return renderError("El correo electrónico ingresado no es correcto, intente nuevamente");
-        
+        return renderError("El correo o la contraseña ingresados no son correctos, intente nuevamente");
     }
 
-    if(contraLogin !== contraUsuario) {
-        document.getElementById("contraLogin").value = "";
-        return renderError("La contraseña ingresada no es correcta, intente nuevamente");
-    }
+    const usuariosActualizados = usuariosStorage.map(user => ({
+        ...user,
+        isLogged: user.id === usuarioEncontrado.id
+    }));
 
-    if(correoLogin === correoUsuario && contraLogin === contraUsuario) {
-        window.location.href = "./perfil.html"
-    }
+    localStorage.setItem("usuarios", JSON.stringify(usuariosActualizados));
+    window.location.href = "./perfil.html";
 
 });

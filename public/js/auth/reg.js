@@ -1,7 +1,7 @@
 //validación de formularios y localStorage
 
 const alertError = document.getElementById("errorDatosRegistro");
-const registrar = document.getElementById("botonRegistro");
+const formRegistro = document.getElementById("formRegistro");
 const renderError = (text) => {
     alertError.textContent = text;
     setTimeout(() => {
@@ -9,15 +9,17 @@ const renderError = (text) => {
     }, 3000);
 };
 
-registrar.addEventListener("click", () => {
-
+formRegistro.addEventListener("submit", (e) => {
+    e.preventDefault();
+	
     const id = window.crypto.randomUUID();
     const nombre = document.getElementById("nombre").value;
     const correo = document.getElementById("correo").value;
     const nacimiento = document.getElementById("nacimiento").value;
     const contra = document.getElementById("contra").value;
     const contraPrueba = document.getElementById("contraPrueba").value;
-    var validar = false;
+
+    let validar = false;
     alertError.textContent = null;
 
     function validarContra(contra) {
@@ -51,10 +53,13 @@ registrar.addEventListener("click", () => {
         return renderError("Asegúrese que las contraseñas coincidan");
     }
 
+    usuario.isLogged = false;
     validar = true;
 
     if (validar) {
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        usuarios.push(usuario);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
         document.getElementById("registrado").textContent = "Registrado exitosamente! Redireccionando al ingreso...";
         setTimeout(() => {
             window.location.href = "./login.html";

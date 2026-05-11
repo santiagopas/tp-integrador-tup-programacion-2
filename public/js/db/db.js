@@ -2,8 +2,29 @@ const STORAGE_KEY = 'personajes';
 const ACTIVE_KEY = 'idPersonajeActivo';
 
 export const getCharacters = () => {
-	const stored =  JSON.parse(localStorage.getItem(STORAGE_KEY));
+	const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
 	return Array.isArray(stored) ? stored : [];
+};
+
+export const getUsers = () => {
+	const storedUsers = JSON.parse(localStorage.getItem('usuarios'));
+	return Array.isArray(storedUsers) ? storedUsers : [];
+};
+
+export const getUser = () => {
+	const users = getUsers();
+	return users.find(u => u.isLogged) || null;
+};
+
+export const saveUser = (updatedUser) => {
+	const users = getUsers();
+	const index = users.findIndex(u => u.id === updatedUser.id);
+	if (index !== -1) {
+		users[index] = updatedUser;
+	} else {
+		users.push(updatedUser);
+	}
+	localStorage.setItem('usuarios', JSON.stringify(users));
 };
 
 export const saveCharacters = (characters) => {

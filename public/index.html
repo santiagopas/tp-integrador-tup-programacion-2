@@ -22,7 +22,7 @@
 	<meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
 	<meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
 	<link rel="stylesheet" href="./css/pages/home.css" />
-	<script src="./js/index.js" defer></script>
+	<script type="module" src="./js/index.js" defer></script>
 </head>
 
 <body>
@@ -47,6 +47,12 @@
 				<li class="nav-item">
 					<a href="./login.html" class="nav-link">Iniciar sesión</a>
 				</li>
+				<li class="nav-item" id="mensajeBienvenida">
+					Bienvenido, usuario!
+				</li>
+				<li class="nav-item">
+					<a href="./index.html" class="nav-link">Cerrar Sesión</a>
+				</li>
 				<li class="nav-item">
 					<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
 						<img src="./assets/icons/sun.svg" alt="Cambiar tema claro" width="25" height="25" />
@@ -66,7 +72,7 @@
 					Crea, edita y lleva tus datos de personaje y notas a
 					todas tus campañas. Rápido, simple y siempre disponible.
 				</p>
-				<a href="#cta" class="btn-primario">Empezar ahora</a>
+				<a href="./login.html" class="btn-primario">Empezar ahora</a>
 			</div>
 
 			<figure class="hero-image-wrapper">
@@ -117,8 +123,7 @@
 
 	<footer class="site-footer">
 		<p class="footer-text">
-			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena y
-			Santiago Pasciullo
+			© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena Spiatta y Santiago Pasciullo
 		</p>
 	</footer>
 </body>

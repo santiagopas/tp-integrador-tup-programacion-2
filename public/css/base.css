@@ -3,7 +3,7 @@
 	--bg-card: #1e1e1e;
 	--text-main: #f4f4f9;
 	--text-muted: #d6d5d5;
-	--primary-red: #d32f2f;
+	--primary-red: #c73b3b;
 	--primary-red-hover: #b71c1c;
 	--accent-gold: #d4af37;
 	--surface-header: rgba(18, 18, 18, 0.95);
@@ -13,6 +13,8 @@
 	--shadow-nav: 0 4px 10px rgba(0, 0, 0, 0.5);
 	--shadow-card: 0 10px 30px rgba(0, 0, 0, 0.8);
 	--shadow-button: 0 4px 15px rgba(211, 47, 47, 0.3);
+	--success: #2f7840;
+	--success-hover: #218838;
 
 	--font-heading: "Georgia", serif;
 	--font-body: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -34,6 +36,8 @@ body.light-theme {
 	--shadow-nav: 0 8px 24px rgba(81, 54, 25, 0.12);
 	--shadow-card: 0 10px 30px rgba(81, 54, 25, 0.1);
 	--shadow-button: 0 4px 15px rgba(166, 29, 29, 0.18);
+	--success: #28a745;
+	--success-hover: #218838;
 	color-scheme: light;
 }
 
@@ -63,6 +67,13 @@ body {
 	transition:
 		background-color 0.10s ease,
 		color 0.10s ease;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
 }
 
 img,

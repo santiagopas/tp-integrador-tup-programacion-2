@@ -1,3 +1,5 @@
+import { getUser, saveUser } from './db/db.js';
+
 const menuToggle = document.querySelector('#menu-toggle');
 const navMenu = document.querySelector('#nav-menu');
 const themeToggle = document.querySelector('#theme-toggle');
@@ -5,6 +7,73 @@ const themeIcon = document.querySelector('#theme-toggle img');
 const menuIcon = menuToggle?.querySelector('img');
 const brandIcon = document.querySelector('.navbar-brand img');
 const themeStorageKey = 'theme';
+// console.log('usuario global cargado: ', getUser());
+
+const renderNavMenu = () => {
+	const navMenu = document.getElementById('nav-menu');
+	if (!navMenu) return;
+
+	// Preserve theme toggle and mensajeBienvenida if they exist
+	const themeToggleItem = navMenu.querySelector('#theme-toggle')?.closest('.nav-item');
+	const mensajeBienvenidaItem = navMenu.querySelector('#mensajeBienvenida');
+
+	navMenu.innerHTML = '';
+
+	const user = getUser();
+
+	if (user && user.isLogged) {
+		if (mensajeBienvenidaItem) {
+			navMenu.appendChild(mensajeBienvenidaItem);
+		}
+
+		const perfilItem = document.createElement('li');
+		perfilItem.classList.add('nav-item');
+		const perfilLink = document.createElement('a');
+		perfilLink.href = `./perfil.html?id=${user.id}`;
+		perfilLink.classList.add('nav-link');
+		perfilLink.textContent = 'Perfil';
+		perfilItem.appendChild(perfilLink);
+		navMenu.appendChild(perfilItem);
+
+		const cerrarItem = document.createElement('li');
+		cerrarItem.classList.add('nav-item');
+		const cerrarLink = document.createElement('a');
+		cerrarLink.href = './index.html';
+		cerrarLink.classList.add('nav-link');
+		cerrarLink.textContent = 'Cerrar Sesión';
+		cerrarLink.addEventListener('click', () => {
+			user.isLogged = false;
+			saveUser(user);
+		});
+		cerrarItem.appendChild(cerrarLink);
+		navMenu.appendChild(cerrarItem);
+	} else {
+		const links = [
+			{ href: './index.html', text: 'Inicio' },
+			{ href: './registro.html', text: 'Registrarse' },
+			{ href: './login.html', text: 'Iniciar sesión' }
+		];
+
+		links.forEach(linkInfo => {
+			const item = document.createElement('li');
+			item.classList.add('nav-item');
+			const link = document.createElement('a');
+			link.href = linkInfo.href;
+			link.classList.add('nav-link');
+			link.textContent = linkInfo.text;
+			item.appendChild(link);
+			navMenu.appendChild(item);
+		});
+	}
+
+	if (themeToggleItem) {
+		navMenu.appendChild(themeToggleItem);
+	}
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	renderNavMenu();
+});
 
 const updateMenuToggleState = () => {
 	if (!menuToggle || !navMenu || !menuIcon) {

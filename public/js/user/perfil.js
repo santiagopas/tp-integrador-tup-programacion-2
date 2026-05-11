@@ -1,4 +1,4 @@
-import { getCharacters, getCharacterById } from './db/db.js';
+import { getCharacters, getCharacterById, getUser, saveUser, setActiveCharacterId } from '../db/db.js';
 
 // Mostrar personajes en la página
 const mostrarPersonajes = () => {
@@ -36,12 +36,17 @@ const mostrarPersonajes = () => {
         acciones.classList.add("acciones");
 
         const botonHojaPersonaje = document.createElement("button");
-        botonHojaPersonaje.classList.add("botonMod");
-        botonHojaPersonaje.textContent = "📝";
+        botonHojaPersonaje.classList.add("botonMod", "verHoja");
+        botonHojaPersonaje.textContent = "Ver hoja";
+
+		botonHojaPersonaje.addEventListener("click", ()=>{
+			setActiveCharacterId(personaje.id);
+			window.location.href= './personaje-hoja.html';
+		})
 
         const botonEliminar = document.createElement("button");
-        botonEliminar.classList.add("botonMod");
-        botonEliminar.textContent = "❌";
+        botonEliminar.classList.add("botonMod", "eliminar");
+        botonEliminar.textContent = "Eliminar";
 
         botonEliminar.addEventListener("click", () => {
             const confirmar = confirm(`¿Seguro que quieres borrar el personaje "${personaje.name}"?`);
@@ -73,7 +78,7 @@ const mostrarPersonajes = () => {
 };
 
 //mostrar datos usuario en pagina
-let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+let datosUsuario = getUser();
 
 const mostrarUsuario = () => {
     const nombreUsuario = document.getElementById("nomUsuario");
@@ -132,16 +137,16 @@ const activarEdicion = () => {
 
     //Botón guardar cambios
     const botonGuardar = document.createElement("button");
-    botonGuardar.textContent = "💾";
+    botonGuardar.textContent = "Guardar";
     botonGuardar.classList.add("botonMod");
     botonGuardar.addEventListener("click", () => {
         const nuevoUsuario = {
-            ...JSON.parse(localStorage.getItem("usuario")),
+            ...datosUsuario,
             nombre: document.getElementById("editNombre").value,
             correo: document.getElementById("editCorreo").value,
             nacimiento: document.getElementById("editNacimiento").value
         };
-        localStorage.setItem("usuario", JSON.stringify(nuevoUsuario));
+        saveUser(nuevoUsuario);
         datosUsuario = nuevoUsuario;
         mostrarUsuario();
         edadUsuario.parentElement.style.display = "block";
@@ -167,7 +172,7 @@ const restaurarBotonEditar = () => {
     const acciones = document.querySelector(".acciones");
     acciones.innerHTML = "";
     const botonEditar = document.createElement("button");
-    botonEditar.textContent = "⚙️";
+    botonEditar.textContent = "✏️";
     botonEditar.classList.add("botonMod");
     botonEditar.addEventListener("click", activarEdicion);
     acciones.appendChild(botonEditar);

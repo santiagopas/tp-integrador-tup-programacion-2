@@ -2,105 +2,103 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoja de personaje Dungeon & Dragon's</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <meta name="description"
-        content="App para la Tecnicatura universitaria en programación - Asignatura: Programación 2. Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
-    <meta name="keywords" content="Dungeon & Dragons, hoja de personaje, RPG, rol" />
-    <meta name="author" content="Renzo Larena y Santiago Pasciullo" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hoja de personaje Dungeon & Dragon's</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" />
+	<link rel="manifest" href="site.webmanifest" />
+	<meta name="description"
+		content="App para la Tecnicatura universitaria en programación - Asignatura: Programación 2. Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+	<meta name="keywords" content="Dungeon & Dragons, hoja de personaje, RPG, rol" />
+	<meta name="author" content="Renzo Larena y Santiago Pasciullo" />
 
-    <meta property="og:title" content="Hoja de personaje Dungeon & Dragon's" />
-    <meta property="og:description"
-        content="Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
-    <meta http-equiv="Content-Language" content="es" />
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-    <meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
-    <meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
-    <link rel="stylesheet" href="./css/pages/perfil.css" />
-    <script src="./js/index.js" defer></script>
-    <script type="module" src="./js/perfil.js" defer></script>
+	<meta property="og:title" content="Hoja de personaje Dungeon & Dragon's" />
+	<meta property="og:description"
+		content="Crea tu propia hoja de personaje para Dungeon & Dragons y llevala a todas partes" />
+	<meta http-equiv="Content-Language" content="es" />
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+	<meta property="og:image" content="https://tp-integrador-tup-programacion-2.vercel.app/assets/img/hero.png" />
+	<meta property="og:url" content="https://tp-integrador-tup-programacion-2.vercel.app/" />
+	<link rel="stylesheet" href="./css/pages/perfil.css" />
+	<script type="module" src="./js/index.js" defer></script>
+	<script type="module" src="./js/user/perfil.js" defer></script>
 </head>
 
 <body>
 
-    <header class="site-header">
-        <nav class="navbar">
-            <a href="#">
-                <figure class="navbar-brand">
-                    <img src="./assets/icons/d20-white.svg" alt="dragon rojo" />
-                </figure>
-            </a>
-            <button class="navbar-toggler" aria-label="Abrir menú" id="menu-toggle">
-                <img src="./assets/icons/d20-white.svg" alt="Abrir menú" width="30" height="30" />
+	<header class="site-header">
+		<nav class="navbar">
+			<a href="./index.html">
+				<figure class="navbar-brand">
+					<img src="./assets/icons/d20-white.svg" alt="dragon rojo" />
+				</figure>
+			</a>
+			<button class="navbar-toggler" aria-label="Abrir menú" id="menu-toggle">
+				<img src="./assets/icons/d20-white.svg" alt="Abrir menú" width="30" height="30" />
+			</button>
 
+			<ul class="navbar-nav" id="nav-menu">
+				<li class="nav-item" id="mensajeBienvenida">
+					Bienvenido, usuario!
+				</li>
+				<li class="nav-item">
+					<a href="./index.html" class="nav-link">Cerrar Sesión</a>
+				</li>
+				<li class="nav-item">
+					<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+						<img src="./assets/icons/sun.svg" alt="Cambiar tema" width="25" height="25" />
+					</button>
+				</li>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<div id="datosUsuario">
+				<h1>Tus Datos:</h1>
+				<div class="usuario">
+					<div class="atributoUsuario">
+						<div class="titulo">Nombre:</div>
+						<div id="nomUsuario">nombre usuario</div>
+					</div>
+					<div class="atributoUsuario">
+						<div class="titulo">Correo:</div>
+						<div id="corUsuario">correo usuario</div>
+					</div>
+					<div class="atributoUsuario">
+						<div class="titulo">Nacimiento:</div>
+						<div id="nacUsuario">nacimiento usuario</div>
+					</div>
+					<div class="atributoUsuario">
+						<div class="titulo">Edad:</div>
+						<div id="edaUsuario">edad usuario</div>
+					</div>
+					<div class="acciones">
+						<button class="botonMod" id="botonMod">⚙️</button>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
 
-            </button>
+		<section id="personajesUsuario">
+			<div class="titulo"><strong>
+					<h1>Personajes Creados</h1>
+				</strong> <button class="botonCrearPers" id="crearPersonaje"
+					onclick="location.href='./crear-personaje-form.html'">Crear Personaje</button></div>
 
-            <ul class="navbar-nav" id="nav-menu">
-                <li class="nav-item" id="mensajeBienvenida">
-                    Bienvenido, usuario!
-                </li>
-                <li class="nav-item">
-                    <a href="./index.html" class="nav-link">Cerrar Sesión</a>
-                </li>
-                <li class="nav-item">
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                        <img src="./assets/icons/sun.svg" alt="Cambiar tema" width="25" height="25" />
-                    </button>
-                </li>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <div id="datosUsuario">
-                <h1>Tus Datos:</h1>
-                <div class="usuario">
-                    <div class="atributoUsuario">
-                        <div class="titulo">Nombre:</div>
-                        <div id="nomUsuario">nombre usuario</div>
-                    </div>
-                    <div class="atributoUsuario">
-                        <div class="titulo">Correo:</div>
-                        <div id="corUsuario">correo usuario</div>
-                    </div>
-                    <div class="atributoUsuario">
-                        <div class="titulo">Nacimiento:</div>
-                        <div id="nacUsuario">nacimiento usuario</div>
-                    </div>
-                    <div class="atributoUsuario">
-                        <div class="titulo">Edad:</div>
-                        <div id="edaUsuario">edad usuario</div>
-                    </div>
-                    <div class="acciones">
-                        <button class="botonMod" id="botonMod">⚙️</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
+			<ul id="listadoPersonajes"></ul>
 
-        <section id="personajesUsuario">
-            <div class="titulo"><strong>
-                    <h1>Personajes Creados</h1>
-                </strong> <button class="botonCrearPers" id="crearPersonaje"
-                    onclick="location.href='./crear-personaje-form.html'">Crear Personaje</button></div>
-
-            <ul id="listadoPersonajes"></ul>
-
-        </section>
-    </main>
+		</section>
+	</main>
 </body>
 <footer class="site-footer">
-    <p class="footer-text">
-        © 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena Spiatta y Santiago Pasciullo
-    </p>
+	<p class="footer-text">
+		© 2026 Hoja de Personaje D&D — Proyecto de Renzo Larena Spiatta y Santiago Pasciullo
+	</p>
 </footer>
 
 </html>
