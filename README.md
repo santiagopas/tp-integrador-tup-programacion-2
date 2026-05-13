@@ -1,168 +1,98 @@
-# Tecnicatura Universitaria en Programación  
+---
+Tecnicatura Universitaria en Programación
+Programación II — Trabajo Práctico
 
-## Programación II — Consigna de Trabajo Práctico
-
-### 📌 Introducción
-
-En el marco de la asignatura **Programación II** de la Tecnicatura Universitaria en Programación, este trabajo práctico tiene como objetivo integrar los conocimientos adquiridos en el desarrollo frontend, aplicando buenas prácticas y tecnologías modernas.
-
-Los estudiantes trabajarán en equipo para crear una **aplicación web funcional, responsive y accesible**, demostrando su capacidad para resolver problemas reales mediante soluciones técnicas robustas.
-
-Se hará énfasis en la **simulación de persistencia de datos mediante `localStorage`**, reemplazando un backend real para simplificar la infraestructura sin perder complejidad lógica.
+Integrantes:	Pasciullo, Santiago
+				Larena Spiatta, Renzo
 
 ---
 
-## 🧩 Modalidad de Trabajo
+### Introducción
 
-- **Trabajo grupal obligatorio:** equipos de 4 a 5 personas.  
-- Se fomenta el uso de **Git, GitHub** y metodologías ágiles (daily meetings informales, tablero Kanban opcional).  
-- El repositorio debe tener **al menos 5 commits por integrante** para evidenciar participación activa.  
-- **Fecha límite de entrega:** *12 de septiembre (Semana 7)*.  
-- Se evaluará puntualidad, cumplimiento de requisitos, calidad técnica y funcionamiento sin errores.
+	El trabajo práctico busca integrar conocimientos de frontend aplicando buenas prácticas y tecnologías modernas. Los estudiantes deberán desarrollar en equipo una aplicación web funcional, responsive y accesible, con persistencia simulada mediante localStorage.
+
+	Lo que nos propusimos hacer fue un sitio web que te permita crear un usuario y generar, organizar y eliminar hojas de personajes para el juego de mesa Calabozos y Dragones (Dungeons and Dragons).
 
 ---
 
-## 🎯 Objetivos Ampliados
+### Descripción del Proyecto
 
-El proyecto busca que los estudiantes:
-
-1. Estructuren correctamente un sitio web usando **HTML5 semántico**.  
-2. Maqueten utilizando **CSS Flexbox y Grid** sin frameworks externos.  
-3. Desarrollen **formularios con validación en tiempo real** usando JavaScript.  
-4. Persistan datos localmente usando **localStorage** (guardar, leer, actualizar, eliminar).  
-5. Construyan un sitio **responsive** con al menos **3 breakpoints**.  
-6. Agreguen **interactividad y efectos visuales** con JavaScript y CSS.
+	Utilizamos GitHub y Git para ejecutar el proyecto y organizarnos entre los integrantes. La base de datos que contiene los datos de la cuenta se simula con localSorage.
+	Se comienza desde la página Index.html, donde se ofrece una introducción de la pagina y el funcionamiento general de la página web. De ahí se puede acceder a las páginas de registro e inicio de sesión, donde se puede registrar con un usuario si no tiene cuenta, o “loguearse” con una cuenta actual si ya la tiene.
+	Al iniciar sesión, se accede a la página con la cuenta del usuario, donde se muestran los datos personales y se permite editarlos. Como un usuario nuevo no tiene personajes hechos, la primera vez que se ingresa no existen personajes creados, por lo que se continua con la creación de un personaje.
+	En la página de creación de personaje, se gestiona las características básicas de un personaje ficticio que el usuario puede crear para utilizar en el juego de mesa; se elige una o varias de las opciones presentadas, y si el usuario esta conforme, se continua con el botón de crear personaje, o la opción de limpiar todos los campos para empezar de cero. Si se decide continuar, se avanza automáticamente a la siguiente página.
+	La hoja de personaje muestra y permite editar algunos datos del personaje ingresado, listo para utilizar en el juego de mesa.
+	Si se vuelve al perfil del usuario, de ahora en adelante aparecerán en pantalla los personajes creados, y si se desea puede eliminar personajes que ya no quiera utilizar, asi como crear más personajes.
 
 ---
 
-## 🛠 Tecnologías Requeridas
+### Instrucciones de ejecución
 
-- **HTML5 semántico**  
-- **CSS3** (Flexbox y Grid únicamente)  
-- **JavaScript** (DOM, eventos, funciones, condiciones, ciclos, localStorage)
-
-> ⚠ **Importante:** No está permitido el uso de **Bootstrap**, **Tailwind** ni ningún otro framework CSS.  
-> Se evaluará la capacidad de maquetar manualmente con Flexbox y Grid.
+	Se puede acceder a las páginas mediante el siguiente link:
+	https://tp-integrador-tup-programacion-2.vercel.app/
+	No hay necesidad de correr el programa localmente, pero de ser necesario, se puede levanter utilizando live server desde el archivo index.html.
 
 ---
 
-## 📁 Estructura del Proyecto
+### Funcionalidades implementadas
 
-### ✔ Requisitos Mínimos (Base)
+	1.	Inicio de sesión
+	2.	Registro de usuario
+	3.	Gestión de datos del usuario
+	4.	Gestión de personajes
 
-- **4 páginas HTML** con:
-  - Estructura semántica: `<header>`, `<nav>`, `<main>`, `<footer>`
-  - Maquetación combinando **Flexbox** y **Grid**
-  - **Favicon** personalizado e imágenes optimizadas
-  - Sistema de navegación entre páginas (enlaces normales o navegación sin recarga con JS)
 
----
+### Funcionalidades extras implementadas
 
-## 📝 Formulario Avanzado + localStorage
+	1.	Modo claro/oscuro
+	2.	Animación de imágenes
 
-El formulario debe incluir:
-
-- **6 a 8 campos** (text, email, tel, date, select, checkbox group, radio group)  
-- **Validación en tiempo real** (obligatoriedad, formato, validación cruzada)  
-- **Feedback visual avanzado** (mensajes contextuales, iconos de estado)  
-- Al enviar:
-  - Los datos se guardan en **localStorage**
-  - Se muestran en otra sección/página  
-- Opción de **listar, editar y eliminar** registros (CRUD completo)
 
 ---
 
-## 📱 Diseño Responsive
+### Tecnologías
 
-Mínimo **3 breakpoints**:
+Después, de cada tecnología utilizamos:
 
-- **Desktop:** > 1024px  
-- **Tablet:** 768px (menú hamburguesa)  
-- **Celular:** < 480px (stack vertical)
+	HTML5:
 
-**Opcional (extra valorado):**  
+	•	Uso de estructuras semánticas (header, nav, main, etc.) y metadatos (meta charset, viewport, description, keywords, author),
+	•	Implementación de favicon y manifest para compatibilidad con dispositivos móviles,
+	•	Enlaces a hojas de estilo externas y scripts con defer para optimizar carga de datos,
+	•	Navegación accesible con botones y enlaces
 
-- **Dark/Light mode toggle** con persistencia en `localStorage`
+	CSS:
 
----
+	•	Flexbox y Grid para maquetación adaptable,
+	•	Uso de variables para consistencia en colores, estilos, e interacciones,
+	•	Sombras, bordes y transiciones para mejorar la experiencia visual,
+	•	Responsive design para adaptar las páginas en pc, tablet y móvil,
+	•	Botones y tarjetas con efectos visuales para ofrecer retroalimentación al usuario.
 
-## ✨ Efectos y Animaciones (elegir al menos 2)
+	JavaScript:
 
-- Animaciones con `@keyframes`  
-- Micro-interacciones (hover, focus, active)  
-- Transiciones suaves (color, tamaño, opacidad)  
-- Loaders o indicadores de carga  
-- Menú hamburguesa con animación  
-
----
-
-## 🗄 Simulación de Backend con localStorage
-
-Cada equipo deberá implementar una capa de persistencia local que permita:
-
-- Guardar datos del formulario  
-- Leer y mostrar datos guardados  
-- Actualizar registros existentes  
-- Eliminar registros  
-
-Esto demuestra comprensión del **CRUD** sin depender de una API externa.
-
-### Extras posibles sobre localStorage
-
-- Sincronizar datos entre pestañas con el evento `storage`  
-- Exportar / importar datos a **JSON**  
-- Simular un **login simple** con usuario guardado  
+	•	Manipulación del DOM para mostrar datos dinámicos,
+	•	Eventos para registrar acciones del usuario en formularios y habilitar botones,
+	•	Validación de formularios,
+	•	Verificación de campos obligatorios,
+	•	Validación de campos como contraseñas para que cumplan con requisitos específicos,
+	•	Persistencia de datos con localStorage, donde se guardan datos del usuario y sus personajes en formato JSON,
+	•	Recuperar, listar, editar y eliminar registros (CRUD completo),
+	•	Uso de UUID para generar identificadores únicos.
 
 ---
 
-## 🚀 Extras Valorados (Desafíos Adicionales)
+### Imágenes
 
-- Implementación de un **carrito de compras** con localStorage  
-- **Dark/Light mode** persistente  
-- **Buscador con filtrado en tiempo real** sobre datos guardados  
-- Sistema de **rating con estrellas** interactivo  
-- Galería de imágenes con **lightbox**
+![Captura1](./public/assets/img/Screenshot1.png)
+Captura 1: Página principal (index)
 
---
+![Captura2](./public/assets/img/Screenshot2.png)
+Captura 2: Página de registro.
 
-## Criterios de Evaluación
+![Captura3](./public/assets/img/Screenshot3.png)
+Captura 3: Página del perfil, en modo claro.
 
-| **Categoría**                                      | **Puntaje** |
-|----------------------------------------------------|-------------|
-| Estructura HTML semántica                          | 20          |
-| CSS (Flexbox, Grid, responsive, animaciones)       | 25          |
-| JavaScript (DOM, eventos, localStorage, validaciones) | 30       |
-| Diseño responsive + UX/UI                          | 15          |
-| Documentación + organización (README, commits)     | 10          |
-| **Total**                                          | **100**     |
+![Captura4](./public/assets/img/Screenshot4.png)
+Captura 4: Página del personaje creado, en formato de teléfono android y tablet.
 
----
-
-## Entregables
-
-- Repositorio Git **público** con el código.  
-- **README** claro con:
-  - Descripción del proyecto  
-  - Tecnologías usadas  
-  - Instrucciones para ejecutarlo  
-  - Capturas de pantalla  
-- Lista de funcionalidades implementadas  
-- Lista de extras implementados (si aplica)
-
----
-
-## ✅ Checklist de Autoevaluación del Equipo
-
-Antes de entregar, verificar que el proyecto cumpla:
-
-- ☐ **4 páginas HTML** con estructura semántica  
-- ☐ Uso combinado de **Flexbox y Grid** (sin Bootstrap)  
-- ☐ **Formulario** con 6–8 campos y validación en tiempo real  
-- ☐ **CRUD completo** con localStorage (guardar, leer, editar, eliminar)  
-- ☐ Al menos **2 animaciones o interacciones**  
-- ☐ **Responsive** en 3 breakpoints (Desktop, Tablet, Celular)  
-- ☐ **README completo** con capturas
-
-## Proyecto realizado
-
-## App para crear hoja de personaje para el juego calabozos y dragones
