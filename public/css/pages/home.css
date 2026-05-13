@@ -42,6 +42,7 @@
 .hero-img {
 	border-radius: 12px;
 	box-shadow: var(--shadow-card);
+	width: 90%;
 	border: 2px solid var(--border-color);
 	transition: transform 0.3s ease;
 }
