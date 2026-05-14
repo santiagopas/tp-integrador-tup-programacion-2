@@ -1,197 +1,200 @@
 @import url(../base.css);
 
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .usuario {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border: 1px solid var(--border-strong);
-    padding: 30px;
-    border-radius: 6px;
-    background-color: var(--bg-card);
-    width: 100%;
-    font-size: 18px;
-    color: var(--text-main);
-    box-shadow: var(--shadow-card);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 1rem;
+	border: 1px solid var(--border-strong);
+	padding: 30px;
+	border-radius: 6px;
+	background-color: var(--bg-card);
+	width: 100%;
+	font-size: 18px;
+	color: var(--text-main);
+	box-shadow: var(--shadow-card);
 }
 
 .atributoUsuario {
-    flex: 1;
-    min-width: 200px;
-    padding: 1rem;
-    background-color: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+	flex: 1;
+	padding: 1rem;
+	background-color: var(--bg-dark);
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 .titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	font-weight: 600;
 }
 
 #crearPersonaje {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .botonMod {
-    width: auto;
-    padding: 10px 15px;
-    color: var(--text-main);
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	width: auto;
+	padding: 10px 15px;
+	color: var(--text-main);
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .botonMod:hover {
-    transform: translateY(-2px);
+	transform: translateY(-2px);
 }
 
 .verHoja {
-    background-color: var(--success);
+	background-color: var(--success);
 }
+
 .verHoja:hover {
-    background-color: var(--success-hover);
+	background-color: var(--success-hover);
 }
 
 .eliminar {
-    background-color: var(--primary-red);
+	background-color: var(--primary-red);
 }
+
 .eliminar:hover {
-    background: var(--primary-red-hover);
+	background: var(--primary-red-hover);
 }
 
 .botonCrearPers {
-    width: auto;
-    padding: 10px 20px;
-    background: var(--primary-red);
-    color: var(--text-main);
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: var(--shadow-button);
+	width: auto;
+	padding: 10px 20px;
+	background: var(--primary-red);
+	color: var(--text-main);
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+	box-shadow: var(--shadow-button);
 }
 
 .botonCrearPers:hover {
-    background-color: var(--primary-red-hover);
-    transform: translateY(-2px);
+	background-color: var(--primary-red-hover);
+	transform: translateY(-2px);
 }
 
 .personaje {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    border: 1px solid var(--border-color);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 6px;
-    background-color: var(--bg-card);
-    width: 100%;
-    box-shadow: var(--shadow-nav);
-    transition: transform 0.3s ease;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	border: 1px solid var(--border-color);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 15px;
+	border-radius: 6px;
+	background-color: var(--bg-card);
+	width: 100%;
+	box-shadow: var(--shadow-nav);
+	transition: transform 0.3s ease;
 }
 
 .personaje:hover {
-    transform: translateY(-2px);
+	transform: translateY(-2px);
 }
 
 .nomPer,
 .claPer,
 .nivPer,
 .fecPer {
-    flex: 1;
-    padding: 0.5rem 1rem;
-    background-color: var(--bg-dark);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 0.95rem;
-    color: var(--text-main);
+	flex: 1;
+	padding: 0.5rem 1rem;
+	background-color: var(--bg-dark);
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	font-size: 0.95rem;
+	color: var(--text-main);
 }
 
 .acciones {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 0 0 auto;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 0 0 auto;
 }
 
 #listadoPersonajes {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    color: var(--text-muted);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: var(--text-muted);
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .usuario {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 20px;
-    }
+	.usuario {
+		flex-direction: column;
+		align-items: stretch;
+		padding: 20px;
+	}
 
-    .atributoUsuario {
-        width: 100%;
-        margin-right: 0;
-    }
+	.atributoUsuario {
+		width: 100%;
+		margin-right: 0;
+	}
 
-    .titulo {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
+	.titulo {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
 
-    .botonCrearPers {
-        width: 100%;
-        margin-top: 1rem;
-    }
+	.botonCrearPers {
+		width: 100%;
+		margin-top: 1rem;
+	}
 
-    .personaje {
-        flex-direction: column;
-        align-items: stretch;
-    }
+	.personaje {
+		flex-direction: column;
+		align-items: stretch;
+	}
 
-    .nomPer,
-    .claPer,
-    .nivPer,
-    .fecPer {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
+	.nomPer,
+	.claPer,
+	.nivPer,
+	.fecPer {
+		margin-right: 0;
+		margin-bottom: 0.5rem;
+	}
 
-    .acciones {
-        justify-content: stretch;
-        width: 100%;
-    }
+	.acciones {
+		justify-content: stretch;
+		width: 100%;
+	}
 
-    .acciones .botonMod {
-        flex: 1;
-        text-align: center;
-    }
+	.acciones .botonMod {
+		flex: 1;
+		text-align: center;
+	}
 }
