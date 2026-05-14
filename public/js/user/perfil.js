@@ -1,10 +1,26 @@
 import {
 	getCharacters,
-	getCharacterById,
-	getUser,
+	getUsers,
 	saveUser,
 	setActiveCharacterId,
 } from '../db/db.js';
+
+const getUserIdFromUrl = () => {
+	const params = new URLSearchParams(window.location.search);
+	const idParam = params.get('id');
+	if (idParam) {
+		return idParam;
+	}
+
+	const match = window.location.pathname.match(/perfil\.html\/([^/]+)/);
+	return match ? decodeURIComponent(match[1]) : null;
+};
+
+const userIdFromUrl = getUserIdFromUrl();
+const users = getUsers();
+let datosUsuario = userIdFromUrl
+	? users.find((user) => user.id === userIdFromUrl && user.isLogged)
+	: null;
 
 // Mostrar personajes en la página
 const mostrarPersonajes = () => {
@@ -47,7 +63,9 @@ const mostrarPersonajes = () => {
 
 		botonHojaPersonaje.addEventListener('click', () => {
 			setActiveCharacterId(personaje.id);
-			window.location.href = './personaje-hoja.html';
+			const hojaUrl = new URL('./personaje-hoja.html', window.location.href);
+			hojaUrl.searchParams.set('id', personaje.id);
+			window.location.href = hojaUrl.toString();
 		});
 
 		const botonEliminar = document.createElement('button');
@@ -84,9 +102,6 @@ const mostrarPersonajes = () => {
 		listado.appendChild(itemLista);
 	});
 };
-
-//mostrar datos usuario en pagina
-let datosUsuario = getUser();
 
 const mostrarUsuario = () => {
 	const nombreUsuario = document.getElementById('nomUsuario');
@@ -210,10 +225,22 @@ const restaurarBotonEditar = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	mostrarUsuario();
 	if (!datosUsuario) {
+		window.location.replace('./index.html');
 		return;
 	}
+	const crearPersonajeButton = document.getElementById('crearPersonaje');
+	if (crearPersonajeButton) {
+		const createUrl = new URL(
+			'./crear-personaje-form.html',
+			window.location.href,
+		);
+		createUrl.searchParams.set('id', datosUsuario.id);
+		crearPersonajeButton.onclick = () => {
+			window.location.href = createUrl.toString();
+		};
+	}
+	mostrarUsuario();
 	mostrarPersonajes();
 	restaurarBotonEditar();
 });

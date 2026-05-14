@@ -1,9 +1,32 @@
-import { saveCharacter, setActiveCharacterId } from '../db/db.js';
+import { getUsers, saveCharacter, setActiveCharacterId } from '../db/db.js';
 import { classAbilities } from './habilidades.js';
+
+const getUserIdFromUrl = () => {
+	const params = new URLSearchParams(window.location.search);
+	const idParam = params.get('id');
+	if (idParam) {
+		return idParam;
+	}
+
+	const match = window.location.pathname.match(
+		/crear-personaje-form\.html\/([^/]+)/,
+	);
+	return match ? decodeURIComponent(match[1]) : null;
+};
+
+const userIdFromUrl = getUserIdFromUrl();
+const users = getUsers();
+const activeUser = userIdFromUrl
+	? users.find((user) => user.id === userIdFromUrl && user.isLogged)
+	: null;
+
+if (!activeUser) {
+	window.location.replace('./index.html');
+}
 
 const characterForm = document.querySelector('.character-form');
 
-if (characterForm) {
+if (characterForm && activeUser) {
 	const characterNameInput = document.querySelector('#character-name');
 	const raceSelect = document.querySelector('#race');
 	const classSelect = document.querySelector('#class');

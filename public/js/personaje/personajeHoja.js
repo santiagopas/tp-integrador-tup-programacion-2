@@ -7,7 +7,21 @@ import {
 
 const sheetContainer = document.querySelector('#character-sheet');
 
-console.log(getCharacterById(getActiveCharacterId()));
+const getCharacterIdFromUrl = () => {
+	const params = new URLSearchParams(window.location.search);
+	const idParam = params.get('id');
+	if (idParam) {
+		return idParam;
+	}
+
+	const match = window.location.pathname.match(/personaje-hoja\.html\/([^/]+)/);
+	return match ? decodeURIComponent(match[1]) : null;
+};
+
+const characterIdFromUrl = getCharacterIdFromUrl();
+const activeCharacterId = characterIdFromUrl || getActiveCharacterId();
+
+console.log(getCharacterById(activeCharacterId));
 
 const renderHojaPersonaje = (character) => {
 	if (!sheetContainer) return;
@@ -159,14 +173,13 @@ const renderHojaPersonaje = (character) => {
 	}
 };
 
-const activeCharacterId = getActiveCharacterId();
-if (activeCharacterId) {
+if (!activeCharacterId) {
+	window.location.replace('./index.html');
+} else {
 	const character = getCharacterById(activeCharacterId);
 	if (character) {
 		renderHojaPersonaje(character);
 	} else {
-		sheetContainer.innerHTML = '<p>No se encontro el personaje activo.</p>';
+		window.location.replace('./index.html');
 	}
-} else {
-	sheetContainer.innerHTML = '<p>No tenes pj todavia.</p>';
 }
